@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ইউনিয়ন পরিষদ সেবা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { bangla: ['Noto Sans Bengali', 'sans-serif'] },
+      colors: {
+        primary: '#2ecc71',
+        'primary-dark': '#27ae60',
+        'primary-deeper': '#1e8449',
+        secondary: '#16a085',
+        accent: '#f39c12',
+        'green-light': '#a9dfbf',
+        'green-bg': '#eafaf1',
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { font-family: 'Noto Sans Bengali', sans-serif; }
+  body { background: #f4f6f7; }
+
+  /* Hero gradient */
+  .hero-bg {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 40%, #1abc9c 70%, #16a085 100%);
+  }
+
+  /* Nav */
+  .top-nav { background: #1e8449; }
+
+  /* Service card hover */
+  .service-card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46,204,113,0.25);
+    border-color: #2ecc71;
+  }
+  .service-card:hover .card-icon { color: #27ae60; }
+
+  /* Benefit card */
+  .benefit-card { transition: all 0.2s; }
+  .benefit-card:hover { transform: translateY(-2px); }
+
+  /* Dropdown */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px !important;
+  }
+
+  /* Illustration shapes */
+  .hero-shape { opacity: 0.15; }
+
+  /* Payment logo area */
+  .payment-logo { filter: grayscale(20%); transition: filter 0.2s; }
+  .payment-logo:hover { filter: grayscale(0%); }
+
+  /* Mobile menu toggle */
+  @media (max-width: 768px) {
+    .desktop-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP HEADER ===== -->
+<header class="top-nav text-white">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+    <div class="flex items-center gap-2">
+      <!-- Logo -->
+      <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-green-600 fill-current">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="font-bold text-base md:text-lg">ইউনিয়ন পরিষদ সেবা</span>
+    </div>
+    <div class="flex items-center gap-2 flex-wrap">
+      <a href="#" class="bg-white text-primary-deeper text-xs font-semibold px-3 py-1.5 rounded hover:bg-green-50 transition">● লাইভ চ্যাট</a>
+      <a href="#" class="bg-orange-500 text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-orange-600 transition">ইউনিয়ন ডিজিটাল কেন্দ্র</a>
+      <a href="#" class="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-blue-700 transition">পরিষদ ডিজিটাল কেন্দ্র</a>
+      <div class="flex items-center gap-1 text-xs">
+        <div class="w-6 h-6 bg-blue-700 rounded flex items-center justify-center text-white font-bold text-xs">f</div>
+        <div class="flex flex-col text-xs leading-tight">
+          <span>support@upsheba.com</span>
+          <span>01713243564, 01700-011302</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-bg relative overflow-hidden">
+  <!-- Decorative circles -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full hero-shape -translate-y-32 translate-x-32"></div>
+  <div class="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full hero-shape translate-y-24 -translate-x-24"></div>
+
+  <div class="max-w-7xl mx-auto px-4 py-10 md:py-16 relative z-10">
+    <!-- Illustration row -->
+    <div class="flex items-end justify-center gap-4 mb-6 flex-wrap">
+      <!-- House Left -->
+      <div class="hidden md:flex flex-col items-center">
+        <svg viewBox="0 0 80 80" class="w-20 h-20 text-white fill-current opacity-90">
+          <rect x="15" y="40" width="50" height="35" rx="2"/>
+          <polygon points="40,10 5,42 75,42"/>
+          <rect x="30" y="55" width="20" height="20" fill="#1e8449"/>
+          <rect x="34" y="45" width="12" height="12" fill="#1e8449"/>
+        </svg>
+      </div>
+      <!-- Phone/App mockup -->
+      <div class="bg-white bg-opacity-20 rounded-2xl p-4 text-white text-center w-32">
+        <div class="bg-white bg-opacity-30 rounded-xl p-2 mb-2">
+          <div class="w-16 h-24 bg-gray-800 rounded-lg mx-auto flex items-center justify-center">
+            <div class="w-10 h-16 bg-white rounded flex flex-col gap-1 p-1">
+              <div class="h-1.5 bg-green-400 rounded w-full"></div>
+              <div class="h-1.5 bg-green-300 rounded w-3/4"></div>
+              <div class="h-1.5 bg-green-300 rounded w-full"></div>
+              <div class="h-1.5 bg-green-300 rounded w-2/3"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs font-semibold">মোবাইল অ্যাপ</p>
+      </div>
+      <!-- Computer mockup -->
+      <div class="bg-white bg-opacity-20 rounded-2xl p-4 text-white text-center">
+        <div class="w-40 h-28 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-1">
+          <div class="w-32 h-20 bg-white rounded flex flex-col gap-1 p-1.5">
+            <div class="flex gap-1">
+              <div class="h-2 bg-green-400 rounded flex-1"></div>
+              <div class="h-2 bg-green-200 rounded w-6"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-1 flex-1">
+              <div class="bg-green-100 rounded"></div>
+              <div class="bg-green-100 rounded"></div>
+              <div class="bg-green-100 rounded"></div>
+              <div class="bg-green-100 rounded"></div>
+              <div class="bg-green-100 rounded"></div>
+              <div class="bg-green-100 rounded"></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-24 h-2 bg-white bg-opacity-50 rounded mx-auto"></div>
+      </div>
+      <!-- People illustration -->
+      <div class="hidden md:flex items-end gap-2 text-white opacity-90">
+        <svg viewBox="0 0 100 80" class="w-24 h-20 fill-current">
+          <circle cx="30" cy="15" r="10"/>
+          <rect x="20" y="28" width="20" height="30" rx="4"/>
+          <rect x="10" y="32" width="10" height="20" rx="3"/>
+          <rect x="40" y="32" width="10" height="20" rx="3"/>
+          <rect x="22" y="58" width="8" height="18" rx="3"/>
+          <rect x="30" y="58" width="8" height="18" rx="3"/>
+          <circle cx="70" cy="15" r="10"/>
+          <rect x="60" y="28" width="20" height="30" rx="4"/>
+          <rect x="50" y="32" width="10" height="20" rx="3"/>
+          <rect x="80" y="32" width="10" height="20" rx="3"/>
+          <rect x="62" y="58" width="8" height="18" rx="3"/>
+          <rect x="70" y="58" width="8" height="18" rx="3"/>
+        </svg>
+      </div>
+      <!-- House Right -->
+      <div class="hidden md:flex flex-col items-center">
+        <svg viewBox="0 0 80 80" class="w-24 h-24 text-white fill-current opacity-90">
+          <rect x="10" y="35" width="60" height="40" rx="2"/>
+          <polygon points="40,5 5,37 75,37"/>
+          <rect x="28" y="52" width="24" height="24" fill="#1e8449"/>
+          <rect x="32" y="40" width="16" height="14" fill="#1e8449"/>
+          <rect x="14" y="50" width="10" height="10" fill="#1e8449"/>
+          <rect x="56" y="50" width="10" height="10" fill="#1e8449"/>
+          <rect x="35" y="40" width="2" height="14" fill="#27ae60"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-white text-center text-xl md:text-2xl font-bold mb-6 drop-shadow">আপনার ইউনিয়ন বাছাই করুন</h1>
+
+    <!-- Filter dropdowns -->
+    <div class="bg-white rounded-xl shadow-lg p-3 max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+        <select class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 col-span-1">
+          <option>বিভাগ বাছাই করুন ▾</option>
+          <option>ঢাকা</option><option>চট্টগ্রাম</option><option>রাজশাহী</option>
+          <option>খুলনা</option><option>সিলেট</option><option>বরিশাল</option>
+          <option>রংপুর</option><option>ময়মনসিংহ</option>
+        </select>
+        <select class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <option>জেলা বাছাই করুন ▾</option>
+        </select>
+        <select class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <option>উপজেলা বাছাই করুন ▾</option>
+        </select>
+        <select class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <option>ইউনিয়ন বাছাই করুন ▾</option>
+        </select>
+        <button class="bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg px-6 py-2 text-sm transition col-span-2 md:col-span-1">
+          সার্চ করুন
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES SECTION ===== -->
+<section class="py-10 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-center text-primary-deeper font-bold text-xl md:text-2xl mb-8 relative">
+      আমাদের সেবাসমূহ
+      <span class="block w-20 h-1 bg-primary mx-auto mt-2 rounded"></span>
+    </h2>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+        <!-- Service cards with icons -->
+        <?php
+        // Using JS-like approach — just listing them in HTML
+        ?>
+
+        <!-- Row 1 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">নাগরিক সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ওয়ারিস সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ট্রেড লাইসেন্স সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">চারিত্রিক সনদের আবেদন</p>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">দুস্থ সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ভূমিহীন সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">একই নামের ব্যক্তি প্রমাণ পত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">বার্ষিক আয়ের প্রমাণ পত্র</p>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">শিক্ষার্থী সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অবিবাহিত সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">মৃত্যু নিবন্ধন না হওয়া সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অভিজাতদের অনুমতি পত্রের আবেদন</p>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">প্রতিবন্ধী সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">জণনী পত্রের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">প্রত্যয়নপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">কোনো লোকের স্থায়ী ঠিকানা অনুসন্ধান</p>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অনলাইনে জাতীয়তা সনদ অনুলিপি পত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">জাতীয় পরিচয় সনদ সংশোধন প্রদান</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">কোনো পরিচয় না হওয়া বস্তুর তথ্য প্রদান</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">নিখোঁজ প্রচারণা</p>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">বিবাহিত সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">সম্পদ সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অধিক অসচ্ছলতার সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ঐতিহ্য সনদপত্র</p>
+        </div>
+
+        <!-- Row 7 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অভিজাতদের আয়ের সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">জীবিত সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">প্রত্যয়নপত্র (ফরম্যাট)</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">জীবিত ব্যক্তির চারিত্রিক সনদের আবেদন</p>
+        </div>
+
+        <!-- Row 8 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">আনুমানিক বয়স প্রদান পত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">লিমিট ট্রেড লাইসেন্স</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">বনওয়ালা লেডিং বিজনেস সনদ</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ভেলিং নম্বর প্রদান পত্র</p>
+        </div>
+
+        <!-- Row 9 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ডুটি নাগরিক সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অমাবস্য সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">মালিক আয়ের প্রমাণ সনদপত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">চেনের প্রদান</p>
+        </div>
+
+        <!-- Row 10 -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">ওয়ারিস সনদ</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">প্রিমিয়াম ইন্টেলেক্ট</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">কৃষিজমি ও বেনামরোধ প্রদান পত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">রুচি প্রদান পত্র</p>
+        </div>
+
+        <!-- Last Row -->
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অভিজাতদের সনদের আবেদন</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">অমরা হওয়া সনদ</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">নাগরকী পুলিশ পত্র</p>
+        </div>
+
+        <div class="service-card border border-gray-100 rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-primary">
+          <svg class="card-icon w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          <p class="text-xs text-gray-600 leading-snug">রিসেপশনি সনদের আবেদন</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS SECTION ===== -->
+<section class="py-10 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-center text-primary-deeper font-bold text-xl md:text-2xl mb-8 relative">
+      সুবিধাসমূহ
+      <span class="block w-20 h-1 bg-primary mx-auto mt-2 rounded"></span>
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">সম্পূর্ণ বিনামূল্যে ডেমো কার্যক্রমের নিবন্ধন করুন এবং সঠিক বিভাগ ও সেবা নিশ্চিত করুন</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">কাউন্টার বা হাতে সনদ লেখার পরিবর্তে সনদ দ্রুত ও নির্ভুলভাবে প্রিন্ট ও দিন নিশ্চয়তা</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">অনলাইনে অ্যাকাউন্ট তৈরি করে যে কোনো জায়গা থেকে সেবা নেওয়ার সুবিধা</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">অনলাইন পেমেন্ট গেটওয়ে দিয়ে নিরাপদভাবে ফি পরিশোধ সুবিধা</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">ইউজার রেজিস্ট্রেশন</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">সকল সময় তথ্যের সুবিধা</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">সকল জমা দিয়ে বা জমা ছাড়া জমা অনলাইনে সম্পন্ন ও সেবা স্থিতি নিশ্চিত করুন</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3">
+        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">সামাজিক মিডিয়া পরিষেবার কার্যকলাপ নিয়ন্ত্রণ ও সহায়তা প্রদানকারীর সাথে যোগাযোগের সুযোগ</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3 col-span-2 sm:col-span-1">
+        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">মোবাইল অ্যাপের মাধ্যমে যেকোনো স্থান থেকে তথ্য নিশ্চিত করে সেবা ও সহায়তা প্রদান সুবিধা</p>
+      </div>
+
+      <div class="benefit-card flex flex-col items-center text-center gap-3 col-span-2 sm:col-span-1">
+        <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <p class="text-xs text-gray-600 leading-snug">এক জায়গায় ইউনিয়ন পরিষদের সকল সনদ ও সকল ধরনের প্রয়োজনীয় তথ্য সংরক্ষণ সুবিধা</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ইউনিয়ন সেবা SECTION ===== -->
+<section class="py-10 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-center text-primary-deeper font-bold text-xl md:text-2xl mb-8 relative">
+      ইউনিয়ন সেবা
+      <span class="block w-20 h-1 bg-primary mx-auto mt-2 rounded"></span>
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="text-sm text-gray-600 leading-relaxed space-y-3">
+        <p>বাংলাদেশ সরকারের "ডিজিটাল বাংলাদেশ" বিনির্মাণের লক্ষ্যে ইউনিয়ন পরিষদ সেবা (ইউপিসি) প্রকল্পটি বাংলাদেশ সরকার এবং বিআইডি শ্রম এর যৌথ উদ্যোগে আরম্ভ হয়। ইউনিয়ন পরিষদ সেবা (ইউপিএস) কার্যক্রমের মাধ্যমে ইউনিয়ন পরিষদে ডিজিটালভাবে পরিষেবা প্রদানের মাধ্যমে তৃণমূল পর্যায়ে সুশাসন প্রতিষ্ঠা ও প্রচলিত সেবা উন্নত করার লক্ষ্যে এই প্রকল্প তৈরি করা হয়েছে।</p>
+        <p>ইউনিয়ন পরিষদ সেবা (ইউপিএস) কার্যক্রমের আওতায় ইউনিয়ন পরিষদ কর্মকর্তাদের আইটি বিষয়ে প্রশিক্ষণ প্রদান করা হয়। প্রতিটি ইউনিয়ন পরিষদে একটি করে কম্পিউটার ও প্রিন্টার স্থাপন করা হবে এবং ইউনিয়ন পরিষদের সকল কাজ কম্পিউটারায়িত পদ্ধতিতে সম্পাদন করা হবে।</p>
+        <p>ইউনিয়ন পরিষদ সেবা (ইউপিএস) কার্যক্রমের বিষয়ে বিস্তারিত জানতে নিচের লিংকে ক্লিক করুন অথবা আমাদের সাথে যোগাযোগ করুন। আরও তথ্যের জন্য আমাদের <a href="#" class="text-primary font-semibold hover:underline">ওয়েবসাইট</a> পরিদর্শন করুন।</p>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-200 bg-black aspect-video flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-900 to-green-700 flex flex-col items-center justify-center gap-3">
+          <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-700 transition">
+            <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="text-white text-sm font-semibold">ইউনিয়ন পরিষদ সেবা বাংলাদেশ | ইউপিসি সেবা | UpSheba</p>
+          <p class="text-green-200 text-xs">Watch on YouTube ▶</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-white border-t border-gray-100 pt-10 pb-4">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+      <!-- Payment Partners -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-700 mb-4 border-b pb-2">পেমেন্ট পার্টনার</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-1">
+              <div class="w-4 h-4 bg-orange-500 rounded-full text-white text-xs flex items-center justify-center font-bold">p</div>
+              <span class="font-bold text-orange-600 text-sm">porichoy</span>
+            </div>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <span class="font-bold text-blue-700 text-sm">ekpay</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <span class="font-bold text-green-700 text-xs">SSLCOMMERZ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-700 mb-4 border-b pb-2">পেমেন্ট পদ্ধতি</h3>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-blue-600 text-sm">VISA</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <div class="flex">
+              <div class="w-5 h-5 bg-red-500 rounded-full -mr-2"></div>
+              <div class="w-5 h-5 bg-yellow-400 rounded-full"></div>
+            </div>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-blue-800 text-xs">AMERICAN EXPRESS</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-red-600 text-sm">নগদ</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-pink-600 text-sm">bKash</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-purple-600 text-sm">ড়িওয়ালেট</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-orange-500 text-xs">নেক্সাসপে</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-teal-600 text-sm">ওকে</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-green-700 text-sm">iPay</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-100 pt-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-gray-500">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 bg-blue-700 rounded text-white font-bold text-xs flex items-center justify-center">f</div>
+        <span>ফেসবুক পেইজ ফলো করুন</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-primary transition">গোপনীয়তা নীতি</a>
+        <a href="#" class="hover:text-primary transition">সেবার শর্তাবলী</a>
+        <a href="#" class="hover:text-primary transition">যোগাযোগ</a>
+      </div>
+      <span class="text-gray-400">Powered and design by <span class="text-primary font-semibold">orangebd</span></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
