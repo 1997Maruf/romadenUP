@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>আবেদন ফর্ম</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+<!-- ===== TOP HEADER ===== -->
+<header class="top-nav text-white bg-[#1e8449]">
+  <div class="max-w-[1400px] mx-auto px-4 py-7 flex items-center justify-between flex-wrap gap-2">
+    <a href="index.html" class="flex items-center gap-2">
+      <!-- Logo -->
+      <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 text-green-600 fill-current">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="font-bold text-base md:text-lg">ইউনিয়ন পরিষদ সেবা</span>
+    </a>
+    <div class="flex items-center gap-2 flex-wrap">
+      <a href="login.html" class="bg-white text-black text-primary-deeper text-xs font-semibold px-3 py-1.5 rounded hover:bg-green-50 transition">লগইন </a>
+      <a href="register.html" class="bg-orange-500 text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-orange-600 transition">রেজিস্টেশন </a>
+      <div class="flex items-center gap-1 text-xs">
+        <div class="flex flex-col text-xs leading-tight">
+          <span>support@upsheba.com</span>
+          <span>01713243564, 01700-011302</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Container -->
+<div class="max-w-[1400px] mx-auto px-4 py-10">
+
+  <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+    <!-- LEFT SIDE (Hero Style) -->
+    <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-10 text-white shadow-lg">
+      <h1 class="text-4xl font-bold leading-snug mb-4">
+        ইউনিয়ন ডিজিটাল সেবা
+      </h1>
+      <p class="text-lg opacity-90 mb-6">
+        সকল নাগরিক সেবা এখন অনলাইনে। সহজে লগইন করে আপনার আবেদন পরিচালনা করুন।
+      </p>
+
+      <ul class="space-y-3 text-sm">
+        <li>✔️ দ্রুত আবেদন</li>
+        <li>✔️ অনলাইন যাচাই</li>
+        <li>✔️ সহজ পেমেন্ট</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT SIDE (Form) -->
+    <div class="bg-white rounded-2xl shadow-md p-8 border">
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+        লগইন করুন
+      </h2>
+
+      <form class="space-y-5">
+
+        <div>
+          <label class="text-sm text-gray-600">ইমেইল</label>
+          <input type="email" required
+            class="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-600">পাসওয়ার্ড</label>
+          <input type="password" required
+            class="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+        </div>
+
+        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+          লগইন করুন
+        </button>
+
+      </form>
+
+      <p class="text-center mt-5 text-sm text-gray-600">
+        নতুন ব্যবহারকারী?
+        <a href="register.html" class="text-green-600 font-semibold">রেজিস্ট্রেশন করুন</a>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-white border-t border-gray-100 pt-10 pb-4">
+  <div class="max-w-[1400px] mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+      <!-- Payment Partners -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-700 mb-4 border-b pb-2">পেমেন্ট পার্টনার</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-1">
+              <div class="w-4 h-4 bg-orange-500 rounded-full text-white text-xs flex items-center justify-center font-bold">p</div>
+              <span class="font-bold text-orange-600 text-sm">porichoy</span>
+            </div>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <span class="font-bold text-blue-700 text-sm">ekpay</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-4 py-3 flex items-center justify-center">
+            <span class="font-bold text-green-700 text-xs">SSLCOMMERZ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-700 mb-4 border-b pb-2">পেমেন্ট পদ্ধতি</h3>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-blue-600 text-sm">VISA</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <div class="flex">
+              <div class="w-5 h-5 bg-red-500 rounded-full -mr-2"></div>
+              <div class="w-5 h-5 bg-yellow-400 rounded-full"></div>
+            </div>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-blue-800 text-xs">AMERICAN EXPRESS</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-red-600 text-sm">নগদ</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-pink-600 text-sm">bKash</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-purple-600 text-sm">ড়িওয়ালেট</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-orange-500 text-xs">নেক্সাসপে</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-teal-600 text-sm">ওকে</span>
+          </div>
+          <div class="payment-logo border border-gray-100 rounded-lg px-3 py-2 flex items-center justify-center">
+            <span class="font-bold text-green-700 text-sm">iPay</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-gray-100 pt-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-gray-500">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 bg-blue-700 rounded text-white font-bold text-xs flex items-center justify-center">f</div>
+        <span>ফেসবুক পেইজ ফলো করুন</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-primary transition">গোপনীয়তা নীতি</a>
+        <a href="#" class="hover:text-primary transition">সেবার শর্তাবলী</a>
+        <a href="#" class="hover:text-primary transition">যোগাযোগ</a>
+      </div>
+      <span class="text-gray-400">Powered and design by <span class="text-primary font-semibold">orangebd</span></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
